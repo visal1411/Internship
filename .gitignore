@@ -7,16 +7,40 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+/node_modules
+backend/node_modules
+
+# Build outputs
 dist
 dist-ssr
-*.local
+build
 
-# Editor directories and files
+# Environment files
+.env
+.env.local
+.env.*.local
+*.local
+backend/.env
+
+# Temporary / Scratch Test Files & DB
+db.json
+test.txt
+testOutput.txt
+*.sqlite
+*.sqlite3
+*.db
+backend/test.txt
+backend/testOutput.txt
+backend/testSwaggerVerification.js
+
+# Editor and OS files
 .vscode/*
 !.vscode/extensions.json
 .idea
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
