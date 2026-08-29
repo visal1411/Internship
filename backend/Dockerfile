@@ -1,4 +1,4 @@
-FROM node:22-bookworm-slim
+FROM node:22-slim
 
 # Install OpenSSL for Prisma and clean cache
 RUN apt-get update -y && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
