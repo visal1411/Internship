@@ -1,0 +1,1001 @@
+Breed,Age,Gender,Weight,Status
+Brahman,130,Male,843.7,Healthy
+Kor Khmer,30,Female,221.3,Healthy
+Brahman,39,Male,776.0,Healthy
+Brahman,228,Male,682.1,Underweight
+Kor Khmer,35,Male,280.0,Healthy
+Kor Khmer,151,Male,344.9,Healthy
+Brahman,222,Female,483.5,Healthy
+Hariana,5,Male,146.6,Healthy
+Brahman,65,Male,961.0,Overweight
+Brahman,211,Female,617.0,Healthy
+Brahman,219,Male,831.9,Healthy
+Brahman,74,Male,965.6,Healthy
+Kor Khmer,3,Female,53.7,Healthy
+Brahman,78,Male,814.0,Healthy
+Hariana,133,Female,305.0,Healthy
+Kor Khmer,117,Female,242.2,Healthy
+Hariana,112,Female,312.0,Healthy
+Hariana,93,Female,329.4,Healthy
+Hariana,229,Male,472.5,Healthy
+Hariana,178,Female,325.1,Healthy
+Kor Khmer,61,Male,356.3,Healthy
+Kor Khmer,184,Male,391.7,Healthy
+Hariana,193,Male,509.1,Healthy
+Hariana,78,Male,392.5,Healthy
+Kor Khmer,202,Male,260.6,Underweight
+Kor Khmer,135,Male,382.6,Healthy
+Kor Khmer,25,Male,237.6,Healthy
+Brahman,178,Male,830.9,Healthy
+Brahman,172,Male,750.5,Healthy
+Brahman,43,Male,645.9,Underweight
+Hariana,132,Female,342.5,Healthy
+Brahman,69,Female,582.8,Healthy
+Hariana,153,Female,306.2,Healthy
+Hariana,117,Male,344.2,Underweight
+Brahman,67,Female,511.1,Healthy
+Hariana,18,Female,230.8,Healthy
+Brahman,211,Female,468.7,Healthy
+Brahman,224,Male,865.6,Healthy
+Kor Khmer,19,Male,242.5,Healthy
+Brahman,112,Male,898.2,Healthy
+Kor Khmer,139,Male,354.1,Healthy
+Brahman,46,Female,466.7,Healthy
+Brahman,0,Female,31.4,Healthy
+Kor Khmer,89,Female,244.9,Healthy
+Kor Khmer,141,Female,249.3,Healthy
+Brahman,63,Male,753.7,Healthy
+Hariana,37,Male,398.6,Healthy
+Kor Khmer,36,Male,283.8,Healthy
+Hariana,125,Female,319.2,Healthy
+Hariana,138,Male,544.5,Overweight
+Hariana,99,Male,400.2,Healthy
+Kor Khmer,76,Female,207.6,Underweight
+Hariana,234,Female,372.8,Healthy
+Kor Khmer,2,Male,51.8,Healthy
+Hariana,160,Male,433.9,Healthy
+Brahman,133,Male,938.1,Healthy
+Brahman,177,Male,798.5,Healthy
+Kor Khmer,9,Male,183.0,Overweight
+Brahman,4,Male,218.9,Healthy
+Brahman,150,Female,523.1,Healthy
+Hariana,137,Female,395.0,Overweight
+Kor Khmer,171,Female,234.8,Healthy
+Hariana,129,Male,499.3,Healthy
+Hariana,12,Female,182.8,Healthy
+Hariana,167,Male,525.5,Healthy
+Hariana,129,Male,537.4,Overweight
+Hariana,83,Female,324.0,Healthy
+Hariana,64,Male,421.2,Healthy
+Hariana,62,Male,475.2,Healthy
+Kor Khmer,100,Female,232.5,Healthy
+Brahman,72,Female,652.4,Overweight
+Hariana,16,Female,211.8,Healthy
+Hariana,8,Male,185.1,Healthy
+Hariana,202,Female,331.0,Healthy
+Hariana,142,Female,281.2,Healthy
+Hariana,151,Male,419.8,Healthy
+Hariana,37,Female,327.2,Healthy
+Brahman,162,Female,513.8,Healthy
+Brahman,93,Female,490.7,Healthy
+Hariana,94,Male,488.3,Healthy
+Brahman,48,Male,899.3,Healthy
+Kor Khmer,68,Male,369.1,Healthy
+Hariana,61,Male,498.8,Healthy
+Kor Khmer,187,Female,231.1,Healthy
+Kor Khmer,235,Male,300.2,Healthy
+Hariana,177,Male,534.8,Overweight
+Brahman,77,Female,527.3,Healthy
+Kor Khmer,116,Female,243.5,Healthy
+Hariana,119,Female,367.9,Healthy
+Kor Khmer,202,Male,369.5,Healthy
+Kor Khmer,136,Male,365.9,Healthy
+Kor Khmer,161,Male,425.7,Overweight
+Kor Khmer,75,Female,231.5,Healthy
+Brahman,226,Female,601.0,Healthy
+Kor Khmer,34,Male,308.2,Healthy
+Kor Khmer,0,Female,14.4,Healthy
+Kor Khmer,39,Female,262.0,Overweight
+Brahman,63,Female,565.4,Healthy
+Kor Khmer,149,Male,368.8,Healthy
+Kor Khmer,59,Female,269.2,Healthy
+Brahman,63,Female,518.4,Healthy
+Brahman,92,Male,775.7,Healthy
+Brahman,71,Male,750.8,Healthy
+Kor Khmer,10,Female,96.8,Underweight
+Brahman,104,Female,661.9,Overweight
+Brahman,228,Male,756.2,Healthy
+Kor Khmer,13,Male,192.1,Healthy
+Brahman,59,Female,520.0,Healthy
+Kor Khmer,29,Female,215.0,Healthy
+Hariana,34,Female,308.9,Healthy
+Brahman,212,Female,597.3,Healthy
+Hariana,164,Male,437.9,Healthy
+Kor Khmer,4,Female,63.3,Healthy
+Brahman,82,Female,561.6,Healthy
+Kor Khmer,122,Male,341.1,Healthy
+Hariana,77,Female,373.8,Overweight
+Kor Khmer,153,Male,367.1,Healthy
+Brahman,61,Female,576.0,Healthy
+Brahman,131,Female,586.2,Healthy
+Hariana,88,Male,517.1,Healthy
+Kor Khmer,236,Male,356.3,Healthy
+Brahman,41,Female,439.9,Healthy
+Hariana,88,Female,336.4,Healthy
+Brahman,145,Female,514.1,Healthy
+Brahman,39,Male,730.3,Healthy
+Kor Khmer,71,Female,261.1,Healthy
+Brahman,38,Male,861.0,Healthy
+Kor Khmer,103,Male,350.0,Healthy
+Brahman,13,Female,320.3,Healthy
+Hariana,31,Male,463.8,Overweight
+Brahman,178,Female,563.2,Healthy
+Kor Khmer,124,Female,314.9,Overweight
+Kor Khmer,165,Female,264.1,Healthy
+Hariana,96,Female,267.0,Underweight
+Brahman,22,Female,441.5,Healthy
+Brahman,62,Male,861.8,Healthy
+Hariana,142,Male,524.9,Healthy
+Brahman,224,Female,587.0,Healthy
+Brahman,152,Female,542.3,Healthy
+Kor Khmer,144,Male,307.1,Healthy
+Brahman,224,Male,832.2,Healthy
+Brahman,238,Male,777.7,Healthy
+Hariana,193,Male,438.0,Healthy
+Hariana,205,Female,344.1,Healthy
+Kor Khmer,52,Female,279.6,Overweight
+Brahman,103,Male,881.8,Healthy
+Brahman,103,Female,483.3,Healthy
+Brahman,178,Male,887.8,Healthy
+Kor Khmer,38,Female,252.9,Healthy
+Kor Khmer,178,Male,328.7,Healthy
+Hariana,197,Female,320.6,Healthy
+Kor Khmer,133,Male,350.4,Healthy
+Brahman,66,Male,768.9,Healthy
+Brahman,134,Female,585.5,Healthy
+Kor Khmer,178,Male,345.8,Healthy
+Brahman,199,Female,573.1,Healthy
+Brahman,41,Female,460.5,Healthy
+Kor Khmer,191,Male,334.7,Healthy
+Kor Khmer,14,Female,158.8,Healthy
+Brahman,110,Female,528.8,Healthy
+Brahman,156,Female,644.9,Overweight
+Brahman,32,Female,454.5,Healthy
+Hariana,221,Female,332.3,Healthy
+Hariana,230,Male,508.4,Healthy
+Hariana,154,Female,278.9,Healthy
+Kor Khmer,163,Female,206.0,Underweight
+Hariana,156,Female,275.4,Underweight
+Kor Khmer,37,Female,252.7,Healthy
+Kor Khmer,184,Female,236.2,Healthy
+Hariana,96,Male,582.2,Overweight
+Hariana,228,Female,306.7,Healthy
+Hariana,154,Male,473.5,Healthy
+Brahman,182,Male,981.1,Overweight
+Hariana,32,Male,480.7,Overweight
+Brahman,195,Male,1025.2,Overweight
+Kor Khmer,85,Female,278.6,Healthy
+Brahman,65,Male,918.7,Healthy
+Hariana,9,Male,220.3,Healthy
+Kor Khmer,4,Female,69.4,Healthy
+Kor Khmer,122,Female,236.1,Healthy
+Kor Khmer,73,Female,226.8,Healthy
+Brahman,96,Male,847.1,Healthy
+Hariana,117,Female,319.2,Healthy
+Kor Khmer,37,Female,214.2,Healthy
+Kor Khmer,140,Male,374.3,Healthy
+Kor Khmer,158,Female,273.9,Healthy
+Brahman,46,Female,521.5,Healthy
+Brahman,227,Female,631.3,Healthy
+Hariana,108,Female,287.5,Healthy
+Brahman,215,Male,833.5,Healthy
+Kor Khmer,179,Female,232.1,Healthy
+Hariana,183,Female,264.3,Underweight
+Kor Khmer,14,Male,203.7,Healthy
+Kor Khmer,156,Female,246.9,Healthy
+Brahman,135,Male,978.4,Overweight
+Hariana,4,Female,92.1,Healthy
+Brahman,156,Male,762.9,Healthy
+Brahman,46,Male,946.1,Overweight
+Hariana,67,Male,512.9,Healthy
+Kor Khmer,75,Male,366.4,Healthy
+Kor Khmer,172,Female,244.3,Healthy
+Hariana,129,Male,420.2,Healthy
+Kor Khmer,154,Female,240.7,Healthy
+Hariana,94,Male,513.9,Healthy
+Hariana,114,Male,552.1,Overweight
+Brahman,163,Male,981.1,Overweight
+Hariana,35,Female,273.8,Healthy
+Brahman,25,Male,592.4,Healthy
+Kor Khmer,42,Female,234.3,Healthy
+Kor Khmer,26,Female,165.0,Underweight
+Kor Khmer,68,Female,254.0,Healthy
+Kor Khmer,147,Female,246.3,Healthy
+Brahman,10,Female,251.2,Healthy
+Kor Khmer,73,Female,207.6,Underweight
+Hariana,103,Female,341.0,Healthy
+Hariana,37,Female,276.5,Healthy
+Hariana,133,Female,286.9,Healthy
+Brahman,199,Male,605.9,Underweight
+Kor Khmer,22,Male,259.8,Healthy
+Kor Khmer,46,Male,387.1,Overweight
+Kor Khmer,89,Male,406.3,Overweight
+Brahman,45,Male,758.6,Healthy
+Hariana,106,Female,304.9,Healthy
+Hariana,139,Female,340.2,Healthy
+Kor Khmer,217,Female,225.0,Healthy
+Hariana,140,Female,334.7,Healthy
+Hariana,103,Female,349.2,Healthy
+Brahman,189,Female,617.5,Healthy
+Brahman,209,Female,544.5,Healthy
+Brahman,216,Male,832.7,Healthy
+Brahman,224,Male,775.4,Healthy
+Kor Khmer,110,Male,320.6,Healthy
+Brahman,103,Male,829.1,Healthy
+Hariana,59,Female,327.8,Healthy
+Kor Khmer,170,Female,272.8,Healthy
+Hariana,203,Female,298.9,Healthy
+Hariana,235,Male,534.4,Healthy
+Hariana,99,Female,315.4,Healthy
+Brahman,239,Female,548.8,Healthy
+Brahman,67,Female,500.2,Healthy
+Kor Khmer,132,Male,265.1,Underweight
+Kor Khmer,119,Female,271.9,Healthy
+Brahman,36,Male,811.1,Healthy
+Hariana,71,Male,445.9,Healthy
+Kor Khmer,126,Male,352.2,Healthy
+Brahman,105,Male,892.3,Healthy
+Brahman,240,Female,464.1,Underweight
+Brahman,91,Male,801.7,Healthy
+Hariana,30,Male,423.2,Healthy
+Brahman,121,Female,480.7,Healthy
+Brahman,136,Female,566.0,Healthy
+Brahman,50,Male,699.4,Healthy
+Brahman,28,Female,473.8,Healthy
+Kor Khmer,205,Male,348.8,Healthy
+Kor Khmer,39,Male,266.4,Underweight
+Brahman,40,Male,865.9,Healthy
+Hariana,213,Male,430.8,Healthy
+Kor Khmer,10,Female,110.7,Healthy
+Brahman,150,Male,866.9,Healthy
+Kor Khmer,0,Female,15.6,Healthy
+Kor Khmer,45,Female,210.4,Healthy
+Hariana,100,Female,326.2,Healthy
+Brahman,148,Female,573.5,Healthy
+Brahman,89,Male,904.7,Healthy
+Hariana,109,Female,330.3,Healthy
+Hariana,163,Male,447.9,Healthy
+Brahman,181,Female,504.5,Healthy
+Brahman,214,Female,554.7,Healthy
+Hariana,56,Male,401.5,Healthy
+Kor Khmer,0,Male,10.6,Underweight
+Kor Khmer,62,Male,356.8,Healthy
+Hariana,181,Female,354.4,Healthy
+Kor Khmer,54,Female,183.9,Underweight
+Hariana,114,Male,417.6,Healthy
+Kor Khmer,167,Male,371.7,Healthy
+Kor Khmer,142,Male,421.9,Overweight
+Brahman,148,Male,851.7,Healthy
+Brahman,174,Female,509.9,Healthy
+Kor Khmer,200,Male,343.6,Healthy
+Kor Khmer,52,Male,381.3,Healthy
+Brahman,136,Male,794.9,Healthy
+Brahman,201,Male,782.1,Healthy
+Brahman,179,Female,523.4,Healthy
+Hariana,56,Male,406.8,Healthy
+Kor Khmer,116,Female,252.8,Healthy
+Brahman,153,Male,988.0,Overweight
+Kor Khmer,168,Male,361.3,Healthy
+Hariana,34,Female,278.4,Healthy
+Hariana,62,Male,441.1,Healthy
+Brahman,24,Female,359.7,Underweight
+Hariana,89,Female,352.1,Healthy
+Kor Khmer,74,Male,343.4,Healthy
+Brahman,37,Female,484.4,Healthy
+Kor Khmer,129,Female,329.7,Overweight
+Kor Khmer,134,Female,257.4,Healthy
+Hariana,209,Female,300.6,Healthy
+Hariana,218,Female,311.1,Healthy
+Hariana,161,Female,362.3,Healthy
+Hariana,90,Female,327.3,Healthy
+Hariana,16,Female,178.9,Healthy
+Brahman,127,Male,927.7,Healthy
+Kor Khmer,170,Male,326.6,Healthy
+Kor Khmer,186,Female,296.8,Overweight
+Kor Khmer,107,Male,387.2,Healthy
+Kor Khmer,178,Female,238.8,Healthy
+Hariana,181,Female,366.6,Healthy
+Kor Khmer,151,Male,352.3,Healthy
+Brahman,24,Female,462.7,Healthy
+Brahman,198,Female,576.7,Healthy
+Kor Khmer,179,Female,228.8,Healthy
+Kor Khmer,197,Female,233.9,Healthy
+Brahman,87,Male,932.7,Healthy
+Brahman,160,Female,531.6,Healthy
+Hariana,176,Female,311.9,Healthy
+Brahman,28,Female,409.5,Healthy
+Hariana,62,Male,473.6,Healthy
+Hariana,234,Female,392.0,Overweight
+Hariana,149,Male,415.3,Healthy
+Hariana,153,Male,466.1,Healthy
+Hariana,155,Female,370.9,Healthy
+Kor Khmer,113,Female,247.7,Healthy
+Brahman,212,Male,888.4,Healthy
+Hariana,48,Female,275.3,Healthy
+Brahman,198,Male,886.4,Healthy
+Brahman,80,Male,827.5,Healthy
+Hariana,83,Female,354.7,Healthy
+Kor Khmer,104,Female,279.2,Healthy
+Hariana,176,Male,585.4,Overweight
+Kor Khmer,147,Male,370.2,Healthy
+Brahman,117,Male,876.9,Healthy
+Kor Khmer,85,Male,354.7,Healthy
+Kor Khmer,219,Female,241.2,Healthy
+Kor Khmer,62,Female,252.5,Healthy
+Brahman,188,Female,533.7,Healthy
+Brahman,103,Female,558.2,Healthy
+Kor Khmer,48,Female,267.9,Healthy
+Kor Khmer,70,Male,310.3,Healthy
+Hariana,0,Female,24.5,Healthy
+Kor Khmer,223,Female,282.9,Healthy
+Hariana,140,Female,321.1,Healthy
+Kor Khmer,221,Female,197.0,Underweight
+Hariana,214,Female,305.2,Healthy
+Brahman,178,Male,960.2,Healthy
+Kor Khmer,122,Male,349.0,Healthy
+Kor Khmer,183,Male,315.0,Healthy
+Kor Khmer,210,Female,237.4,Healthy
+Kor Khmer,61,Male,370.1,Healthy
+Hariana,31,Male,418.0,Healthy
+Kor Khmer,157,Female,244.0,Healthy
+Brahman,28,Female,436.1,Healthy
+Brahman,48,Female,500.3,Healthy
+Kor Khmer,172,Male,317.7,Healthy
+Brahman,220,Male,987.3,Overweight
+Kor Khmer,29,Female,201.9,Healthy
+Kor Khmer,143,Female,280.4,Healthy
+Brahman,167,Male,979.3,Overweight
+Kor Khmer,18,Male,259.8,Healthy
+Brahman,17,Female,346.2,Healthy
+Hariana,0,Female,22.9,Healthy
+Kor Khmer,77,Male,345.9,Healthy
+Hariana,114,Female,295.3,Healthy
+Brahman,174,Male,877.5,Healthy
+Hariana,193,Male,410.2,Healthy
+Hariana,219,Male,520.2,Healthy
+Brahman,112,Male,809.6,Healthy
+Hariana,113,Female,331.2,Healthy
+Hariana,221,Female,334.2,Healthy
+Brahman,165,Male,828.0,Healthy
+Hariana,178,Male,492.3,Healthy
+Brahman,62,Male,790.7,Healthy
+Hariana,131,Male,505.3,Healthy
+Brahman,128,Male,735.3,Healthy
+Brahman,7,Female,209.6,Healthy
+Hariana,156,Female,388.0,Overweight
+Hariana,54,Female,281.8,Healthy
+Hariana,102,Female,302.4,Healthy
+Kor Khmer,130,Male,367.8,Healthy
+Kor Khmer,31,Male,303.2,Healthy
+Kor Khmer,9,Male,160.2,Healthy
+Brahman,201,Male,891.6,Healthy
+Hariana,210,Male,494.5,Healthy
+Brahman,109,Female,610.2,Healthy
+Kor Khmer,161,Male,364.3,Healthy
+Hariana,123,Female,317.0,Healthy
+Brahman,224,Female,587.0,Healthy
+Hariana,86,Female,384.7,Overweight
+Brahman,54,Female,522.5,Healthy
+Hariana,219,Male,419.7,Healthy
+Kor Khmer,31,Female,236.9,Healthy
+Kor Khmer,177,Female,247.0,Healthy
+Hariana,134,Female,254.3,Underweight
+Brahman,92,Male,918.5,Healthy
+Kor Khmer,7,Male,122.9,Healthy
+Kor Khmer,64,Male,339.7,Healthy
+Kor Khmer,56,Female,249.8,Healthy
+Hariana,66,Female,325.3,Healthy
+Hariana,215,Male,498.0,Healthy
+Brahman,214,Female,526.0,Healthy
+Brahman,186,Male,893.6,Healthy
+Brahman,71,Male,816.7,Healthy
+Hariana,53,Female,335.5,Healthy
+Hariana,238,Female,345.0,Healthy
+Brahman,228,Female,498.6,Healthy
+Brahman,66,Female,598.7,Healthy
+Hariana,50,Male,419.3,Healthy
+Brahman,96,Male,915.9,Healthy
+Kor Khmer,91,Male,361.4,Healthy
+Hariana,238,Male,550.5,Overweight
+Brahman,7,Male,304.3,Healthy
+Hariana,161,Female,313.6,Healthy
+Kor Khmer,34,Male,305.8,Healthy
+Hariana,95,Male,449.5,Healthy
+Hariana,87,Male,499.6,Healthy
+Hariana,77,Female,270.0,Underweight
+Hariana,31,Female,248.6,Healthy
+Kor Khmer,119,Female,223.1,Healthy
+Hariana,45,Female,333.6,Healthy
+Hariana,234,Male,544.5,Overweight
+Brahman,143,Male,841.0,Healthy
+Hariana,195,Female,319.5,Healthy
+Brahman,164,Female,553.8,Healthy
+Kor Khmer,181,Male,390.7,Healthy
+Kor Khmer,212,Male,317.5,Healthy
+Kor Khmer,141,Female,255.9,Healthy
+Kor Khmer,222,Female,274.4,Healthy
+Brahman,54,Female,556.1,Healthy
+Hariana,175,Female,331.2,Healthy
+Kor Khmer,209,Male,385.0,Healthy
+Hariana,6,Male,114.8,Underweight
+Brahman,73,Male,896.7,Healthy
+Brahman,6,Female,173.7,Healthy
+Brahman,160,Female,449.3,Underweight
+Kor Khmer,150,Male,367.8,Healthy
+Hariana,84,Male,525.6,Healthy
+Hariana,146,Male,458.5,Healthy
+Hariana,111,Male,508.7,Healthy
+Brahman,124,Female,638.3,Overweight
+Kor Khmer,146,Male,396.0,Healthy
+Brahman,35,Male,872.5,Overweight
+Brahman,28,Male,748.9,Healthy
+Hariana,187,Male,468.5,Healthy
+Brahman,81,Male,708.5,Underweight
+Hariana,1,Male,48.5,Healthy
+Kor Khmer,128,Male,320.3,Healthy
+Hariana,46,Female,372.2,Overweight
+Kor Khmer,196,Female,245.6,Healthy
+Hariana,147,Female,329.0,Healthy
+Brahman,10,Female,278.1,Healthy
+Brahman,233,Male,853.7,Healthy
+Kor Khmer,129,Female,292.3,Overweight
+Kor Khmer,194,Female,234.4,Healthy
+Kor Khmer,214,Male,356.8,Healthy
+Hariana,118,Male,430.1,Healthy
+Hariana,139,Female,282.0,Healthy
+Kor Khmer,19,Female,163.8,Healthy
+Brahman,4,Male,204.2,Healthy
+Hariana,36,Female,277.6,Healthy
+Hariana,165,Male,432.8,Healthy
+Hariana,221,Male,399.6,Healthy
+Kor Khmer,136,Male,347.0,Healthy
+Kor Khmer,225,Male,297.3,Underweight
+Kor Khmer,52,Female,257.8,Healthy
+Kor Khmer,171,Male,352.9,Healthy
+Kor Khmer,98,Male,298.2,Healthy
+Brahman,85,Female,529.9,Healthy
+Brahman,107,Male,784.8,Healthy
+Kor Khmer,23,Female,196.7,Healthy
+Hariana,80,Female,365.7,Healthy
+Kor Khmer,201,Female,203.1,Underweight
+Brahman,157,Male,859.7,Healthy
+Brahman,119,Female,540.8,Healthy
+Hariana,58,Female,336.9,Healthy
+Brahman,237,Male,868.1,Healthy
+Kor Khmer,214,Female,231.2,Healthy
+Hariana,127,Female,314.5,Healthy
+Kor Khmer,223,Female,230.1,Healthy
+Kor Khmer,208,Female,276.9,Healthy
+Hariana,113,Female,325.3,Healthy
+Kor Khmer,114,Male,416.1,Overweight
+Brahman,208,Female,546.7,Healthy
+Kor Khmer,13,Female,131.8,Healthy
+Hariana,8,Male,163.0,Underweight
+Hariana,39,Male,346.3,Underweight
+Hariana,193,Male,391.3,Underweight
+Kor Khmer,236,Female,256.7,Healthy
+Hariana,24,Male,378.9,Healthy
+Hariana,102,Female,273.1,Underweight
+Kor Khmer,200,Female,272.4,Healthy
+Brahman,21,Male,587.6,Healthy
+Kor Khmer,234,Male,355.1,Healthy
+Hariana,237,Female,377.4,Overweight
+Hariana,3,Male,105.3,Healthy
+Kor Khmer,153,Female,243.3,Healthy
+Brahman,185,Male,774.2,Healthy
+Hariana,28,Male,300.4,Underweight
+Hariana,108,Male,430.9,Healthy
+Hariana,97,Female,317.3,Healthy
+Kor Khmer,214,Male,315.4,Healthy
+Hariana,36,Female,286.2,Healthy
+Brahman,74,Female,548.0,Healthy
+Hariana,69,Female,313.0,Healthy
+Hariana,145,Female,303.8,Healthy
+Brahman,127,Male,863.9,Healthy
+Hariana,84,Female,337.3,Healthy
+Kor Khmer,41,Female,204.8,Healthy
+Kor Khmer,99,Male,398.4,Healthy
+Kor Khmer,40,Female,226.3,Healthy
+Brahman,165,Male,851.6,Healthy
+Hariana,33,Female,303.2,Healthy
+Kor Khmer,16,Male,226.9,Healthy
+Brahman,164,Female,602.4,Healthy
+Hariana,152,Male,478.3,Healthy
+Brahman,229,Female,516.3,Healthy
+Kor Khmer,121,Female,258.9,Healthy
+Kor Khmer,75,Male,306.7,Healthy
+Kor Khmer,86,Male,351.9,Healthy
+Brahman,116,Male,846.4,Healthy
+Brahman,105,Male,830.8,Healthy
+Kor Khmer,85,Female,245.4,Healthy
+Brahman,212,Female,446.5,Underweight
+Kor Khmer,26,Male,264.3,Healthy
+Kor Khmer,56,Female,244.0,Healthy
+Hariana,30,Male,398.4,Healthy
+Brahman,133,Male,762.4,Healthy
+Kor Khmer,218,Female,281.6,Healthy
+Kor Khmer,167,Female,228.3,Healthy
+Brahman,97,Female,601.6,Healthy
+Hariana,11,Female,175.6,Healthy
+Hariana,236,Female,304.0,Healthy
+Kor Khmer,52,Female,282.1,Overweight
+Brahman,198,Female,484.3,Healthy
+Hariana,137,Male,507.6,Healthy
+Brahman,172,Male,935.0,Healthy
+Brahman,144,Male,792.9,Healthy
+Kor Khmer,153,Male,398.7,Healthy
+Hariana,212,Male,453.4,Healthy
+Kor Khmer,219,Female,257.2,Healthy
+Hariana,189,Male,477.1,Healthy
+Hariana,121,Male,458.4,Healthy
+Hariana,45,Male,470.7,Healthy
+Hariana,63,Male,491.0,Healthy
+Hariana,129,Male,383.5,Underweight
+Brahman,53,Male,922.3,Healthy
+Kor Khmer,106,Male,291.3,Underweight
+Brahman,192,Female,606.8,Healthy
+Hariana,50,Female,344.8,Healthy
+Kor Khmer,180,Male,311.8,Healthy
+Hariana,35,Female,276.1,Healthy
+Kor Khmer,114,Female,222.1,Healthy
+Brahman,25,Female,424.2,Healthy
+Kor Khmer,28,Female,199.7,Healthy
+Kor Khmer,148,Male,377.2,Healthy
+Kor Khmer,10,Female,136.3,Healthy
+Kor Khmer,39,Female,259.0,Healthy
+Kor Khmer,10,Female,113.7,Healthy
+Hariana,163,Male,455.2,Healthy
+Kor Khmer,112,Male,290.7,Underweight
+Kor Khmer,186,Male,321.8,Healthy
+Brahman,38,Male,840.0,Healthy
+Kor Khmer,231,Male,406.5,Overweight
+Brahman,226,Male,745.1,Healthy
+Hariana,53,Male,420.2,Healthy
+Kor Khmer,97,Female,248.6,Healthy
+Brahman,54,Female,544.4,Healthy
+Brahman,110,Female,504.8,Healthy
+Hariana,151,Male,484.7,Healthy
+Kor Khmer,149,Male,333.4,Healthy
+Kor Khmer,68,Male,343.8,Healthy
+Brahman,55,Male,864.5,Healthy
+Kor Khmer,32,Male,301.1,Healthy
+Brahman,35,Female,464.9,Healthy
+Kor Khmer,238,Female,247.3,Healthy
+Brahman,147,Male,842.4,Healthy
+Kor Khmer,210,Male,337.0,Healthy
+Hariana,226,Male,453.0,Healthy
+Kor Khmer,234,Male,406.0,Overweight
+Kor Khmer,80,Female,262.0,Healthy
+Hariana,189,Male,451.3,Healthy
+Kor Khmer,108,Male,373.8,Healthy
+Hariana,234,Male,449.5,Healthy
+Kor Khmer,225,Male,391.1,Healthy
+Brahman,200,Female,570.3,Healthy
+Brahman,153,Male,840.8,Healthy
+Kor Khmer,193,Male,365.7,Healthy
+Kor Khmer,72,Female,208.1,Underweight
+Kor Khmer,200,Female,221.8,Healthy
+Brahman,39,Female,440.1,Healthy
+Kor Khmer,16,Male,224.9,Healthy
+Brahman,128,Male,996.8,Overweight
+Hariana,216,Female,397.5,Overweight
+Brahman,60,Female,569.9,Healthy
+Brahman,170,Female,577.5,Healthy
+Hariana,103,Female,266.0,Underweight
+Brahman,41,Female,478.0,Healthy
+Kor Khmer,24,Female,178.8,Healthy
+Kor Khmer,38,Male,296.1,Healthy
+Brahman,34,Male,730.9,Healthy
+Kor Khmer,130,Male,333.3,Healthy
+Brahman,228,Female,441.1,Underweight
+Kor Khmer,107,Female,268.3,Healthy
+Kor Khmer,171,Female,223.2,Healthy
+Brahman,178,Female,563.1,Healthy
+Kor Khmer,221,Female,301.9,Overweight
+Brahman,101,Female,498.3,Healthy
+Kor Khmer,97,Male,260.7,Underweight
+Kor Khmer,11,Male,171.8,Healthy
+Hariana,18,Female,246.6,Healthy
+Hariana,100,Male,554.8,Overweight
+Brahman,43,Female,447.7,Healthy
+Hariana,186,Male,488.1,Healthy
+Brahman,48,Female,496.5,Healthy
+Hariana,188,Female,321.6,Healthy
+Kor Khmer,16,Male,280.4,Overweight
+Brahman,73,Male,713.5,Underweight
+Brahman,56,Female,545.4,Healthy
+Kor Khmer,54,Female,252.0,Healthy
+Brahman,240,Male,942.3,Healthy
+Brahman,46,Male,805.9,Healthy
+Hariana,11,Female,173.6,Healthy
+Brahman,61,Male,796.4,Healthy
+Kor Khmer,79,Female,254.6,Healthy
+Hariana,215,Female,313.8,Healthy
+Hariana,82,Female,342.9,Healthy
+Kor Khmer,7,Female,91.4,Healthy
+Kor Khmer,222,Male,363.2,Healthy
+Hariana,148,Male,463.6,Healthy
+Brahman,80,Male,938.2,Healthy
+Hariana,214,Male,462.6,Healthy
+Kor Khmer,228,Male,287.9,Underweight
+Hariana,117,Male,523.2,Healthy
+Kor Khmer,207,Male,318.3,Healthy
+Hariana,197,Female,303.8,Healthy
+Brahman,199,Male,799.4,Healthy
+Hariana,24,Male,410.1,Healthy
+Hariana,209,Female,255.6,Underweight
+Kor Khmer,88,Male,457.6,Overweight
+Kor Khmer,11,Male,195.5,Healthy
+Kor Khmer,142,Female,255.5,Healthy
+Hariana,58,Male,448.9,Healthy
+Brahman,153,Male,874.2,Healthy
+Kor Khmer,232,Male,368.2,Healthy
+Kor Khmer,108,Female,265.7,Healthy
+Hariana,25,Male,387.0,Healthy
+Kor Khmer,46,Male,331.7,Healthy
+Brahman,31,Female,459.5,Healthy
+Brahman,9,Male,366.5,Healthy
+Kor Khmer,15,Female,151.0,Healthy
+Kor Khmer,198,Female,278.3,Healthy
+Hariana,144,Male,492.5,Healthy
+Brahman,150,Female,388.2,Underweight
+Brahman,25,Female,462.0,Healthy
+Kor Khmer,212,Male,356.8,Healthy
+Hariana,85,Female,322.5,Healthy
+Brahman,134,Female,528.5,Healthy
+Brahman,13,Male,527.4,Healthy
+Hariana,78,Male,504.6,Healthy
+Hariana,116,Male,428.7,Healthy
+Brahman,6,Female,193.4,Healthy
+Brahman,136,Male,767.2,Healthy
+Hariana,114,Female,279.9,Healthy
+Brahman,175,Female,515.5,Healthy
+Kor Khmer,71,Female,267.9,Healthy
+Kor Khmer,58,Female,265.9,Healthy
+Hariana,214,Female,341.7,Healthy
+Hariana,220,Female,348.6,Healthy
+Hariana,81,Female,339.3,Healthy
+Kor Khmer,222,Male,327.5,Healthy
+Brahman,221,Male,886.7,Healthy
+Kor Khmer,115,Female,269.8,Healthy
+Brahman,166,Female,591.5,Healthy
+Kor Khmer,226,Male,391.6,Healthy
+Brahman,145,Female,588.9,Healthy
+Kor Khmer,186,Male,362.3,Healthy
+Hariana,233,Male,514.8,Healthy
+Kor Khmer,102,Male,348.3,Healthy
+Brahman,16,Female,319.3,Healthy
+Kor Khmer,13,Female,139.5,Healthy
+Kor Khmer,158,Male,323.9,Healthy
+Kor Khmer,151,Male,326.3,Healthy
+Hariana,226,Male,458.3,Healthy
+Kor Khmer,107,Male,321.8,Healthy
+Hariana,187,Male,450.7,Healthy
+Hariana,44,Female,245.9,Underweight
+Kor Khmer,97,Male,356.4,Healthy
+Kor Khmer,130,Female,249.9,Healthy
+Kor Khmer,36,Male,285.9,Healthy
+Brahman,170,Female,586.2,Healthy
+Kor Khmer,167,Female,273.4,Healthy
+Hariana,217,Female,272.8,Underweight
+Kor Khmer,182,Female,230.9,Healthy
+Brahman,214,Female,507.7,Healthy
+Kor Khmer,107,Female,226.2,Healthy
+Brahman,38,Male,829.7,Healthy
+Brahman,14,Female,318.4,Healthy
+Kor Khmer,119,Male,340.5,Healthy
+Hariana,240,Female,259.9,Underweight
+Brahman,3,Female,121.2,Healthy
+Kor Khmer,92,Male,305.5,Healthy
+Kor Khmer,213,Female,251.5,Healthy
+Hariana,152,Male,477.8,Healthy
+Brahman,140,Male,965.4,Healthy
+Brahman,209,Male,738.7,Healthy
+Kor Khmer,160,Male,244.3,Underweight
+Kor Khmer,15,Female,156.9,Healthy
+Hariana,236,Female,383.5,Overweight
+Hariana,169,Male,522.6,Healthy
+Brahman,107,Female,560.7,Healthy
+Brahman,125,Female,522.7,Healthy
+Kor Khmer,193,Male,378.2,Healthy
+Brahman,54,Female,478.0,Healthy
+Hariana,226,Male,487.2,Healthy
+Hariana,169,Male,488.5,Healthy
+Kor Khmer,33,Female,240.5,Healthy
+Hariana,157,Female,414.7,Overweight
+Hariana,12,Female,184.5,Healthy
+Hariana,140,Male,441.2,Healthy
+Hariana,17,Male,305.2,Healthy
+Kor Khmer,159,Female,205.8,Underweight
+Kor Khmer,95,Female,231.9,Healthy
+Brahman,226,Female,527.5,Healthy
+Hariana,122,Female,307.8,Healthy
+Brahman,38,Male,777.8,Healthy
+Kor Khmer,45,Female,214.9,Healthy
+Kor Khmer,28,Male,319.8,Healthy
+Kor Khmer,189,Male,350.0,Healthy
+Kor Khmer,240,Female,249.8,Healthy
+Kor Khmer,220,Female,241.8,Healthy
+Kor Khmer,61,Female,247.7,Healthy
+Kor Khmer,235,Male,378.9,Healthy
+Hariana,184,Female,296.8,Healthy
+Brahman,15,Female,315.5,Healthy
+Kor Khmer,183,Male,339.4,Healthy
+Hariana,235,Female,281.3,Healthy
+Hariana,238,Male,426.9,Healthy
+Brahman,120,Female,523.4,Healthy
+Kor Khmer,9,Male,168.3,Healthy
+Brahman,157,Female,564.4,Healthy
+Kor Khmer,152,Female,254.8,Healthy
+Hariana,102,Male,503.5,Healthy
+Hariana,83,Male,455.6,Healthy
+Hariana,132,Female,337.6,Healthy
+Hariana,64,Male,450.8,Healthy
+Brahman,221,Male,872.6,Healthy
+Kor Khmer,176,Male,329.6,Healthy
+Kor Khmer,2,Male,40.0,Underweight
+Brahman,172,Female,542.6,Healthy
+Kor Khmer,141,Female,285.5,Healthy
+Hariana,119,Male,507.7,Healthy
+Kor Khmer,157,Male,383.8,Healthy
+Hariana,67,Male,513.6,Healthy
+Brahman,145,Male,857.4,Healthy
+Kor Khmer,189,Female,254.9,Healthy
+Brahman,36,Female,459.5,Healthy
+Kor Khmer,152,Male,338.9,Healthy
+Hariana,175,Male,493.6,Healthy
+Brahman,192,Male,952.3,Healthy
+Kor Khmer,180,Female,246.5,Healthy
+Hariana,237,Male,444.1,Healthy
+Brahman,206,Female,550.0,Healthy
+Brahman,72,Male,889.5,Healthy
+Kor Khmer,142,Female,213.9,Healthy
+Kor Khmer,48,Male,255.1,Underweight
+Kor Khmer,120,Female,236.1,Healthy
+Hariana,87,Male,406.1,Healthy
+Kor Khmer,195,Male,332.2,Healthy
+Brahman,139,Male,837.2,Healthy
+Brahman,186,Female,525.1,Healthy
+Kor Khmer,36,Male,356.6,Healthy
+Kor Khmer,60,Female,251.5,Healthy
+Brahman,228,Female,566.5,Healthy
+Hariana,170,Male,493.9,Healthy
+Kor Khmer,123,Male,310.0,Healthy
+Kor Khmer,197,Male,386.4,Healthy
+Brahman,38,Female,492.8,Healthy
+Kor Khmer,183,Male,373.5,Healthy
+Hariana,62,Female,283.6,Healthy
+Brahman,45,Female,434.9,Underweight
+Kor Khmer,87,Male,376.7,Healthy
+Brahman,10,Male,415.0,Healthy
+Kor Khmer,61,Male,310.6,Healthy
+Kor Khmer,76,Male,316.4,Healthy
+Kor Khmer,225,Male,389.4,Healthy
+Hariana,152,Male,409.6,Healthy
+Hariana,198,Female,378.4,Overweight
+Brahman,51,Female,478.2,Healthy
+Kor Khmer,3,Female,56.3,Healthy
+Kor Khmer,58,Male,328.5,Healthy
+Hariana,71,Female,340.1,Healthy
+Kor Khmer,147,Female,236.4,Healthy
+Hariana,92,Female,318.5,Healthy
+Kor Khmer,62,Female,245.3,Healthy
+Brahman,53,Female,475.3,Healthy
+Kor Khmer,116,Male,375.6,Healthy
+Kor Khmer,236,Male,332.0,Healthy
+Hariana,109,Female,317.1,Healthy
+Kor Khmer,73,Female,222.5,Healthy
+Kor Khmer,106,Female,185.6,Underweight
+Hariana,225,Male,456.1,Healthy
+Brahman,56,Male,1019.7,Overweight
+Brahman,217,Female,593.2,Healthy
+Hariana,168,Male,464.1,Healthy
+Hariana,240,Male,452.8,Healthy
+Hariana,2,Female,56.4,Healthy
+Hariana,119,Male,490.1,Healthy
+Hariana,5,Male,122.0,Healthy
+Brahman,4,Female,154.9,Healthy
+Brahman,4,Male,219.6,Healthy
+Hariana,53,Male,478.7,Healthy
+Kor Khmer,46,Female,245.4,Healthy
+Hariana,214,Male,465.9,Healthy
+Kor Khmer,176,Male,373.5,Healthy
+Hariana,8,Female,145.6,Healthy
+Hariana,98,Female,312.7,Healthy
+Brahman,19,Female,361.1,Healthy
+Kor Khmer,121,Male,353.3,Healthy
+Kor Khmer,240,Female,288.7,Overweight
+Brahman,60,Male,725.0,Healthy
+Brahman,122,Female,469.0,Healthy
+Brahman,233,Male,864.0,Healthy
+Brahman,162,Female,552.8,Healthy
+Kor Khmer,177,Female,254.3,Healthy
+Kor Khmer,81,Female,254.2,Healthy
+Hariana,61,Female,310.1,Healthy
+Hariana,144,Male,534.2,Healthy
+Brahman,215,Female,461.9,Underweight
+Brahman,2,Female,79.8,Healthy
+Brahman,159,Male,841.2,Healthy
+Hariana,226,Female,271.6,Underweight
+Hariana,229,Male,456.8,Healthy
+Hariana,12,Female,207.0,Overweight
+Hariana,119,Female,325.4,Healthy
+Hariana,124,Female,332.3,Healthy
+Hariana,238,Male,406.4,Healthy
+Hariana,88,Female,303.5,Healthy
+Brahman,72,Female,522.7,Healthy
+Brahman,67,Female,523.5,Healthy
+Brahman,141,Male,958.7,Healthy
+Brahman,100,Male,895.3,Healthy
+Hariana,97,Female,288.1,Healthy
+Kor Khmer,10,Male,170.2,Healthy
+Hariana,104,Female,340.6,Healthy
+Kor Khmer,183,Female,278.5,Healthy
+Brahman,66,Female,625.4,Overweight
+Hariana,122,Female,291.8,Healthy
+Brahman,219,Female,505.4,Healthy
+Hariana,28,Female,234.8,Healthy
+Brahman,136,Female,537.0,Healthy
+Kor Khmer,194,Male,366.3,Healthy
+Kor Khmer,152,Male,384.5,Healthy
+Kor Khmer,225,Male,347.3,Healthy
+Hariana,75,Male,445.4,Healthy
+Kor Khmer,169,Male,355.3,Healthy
+Hariana,8,Male,176.1,Healthy
+Kor Khmer,206,Male,423.1,Overweight
+Kor Khmer,39,Female,190.7,Underweight
+Hariana,24,Female,257.9,Healthy
+Hariana,4,Female,104.2,Overweight
+Kor Khmer,138,Female,250.1,Healthy
+Hariana,186,Male,456.2,Healthy
+Kor Khmer,225,Male,337.5,Healthy
+Hariana,215,Female,319.1,Healthy
+Brahman,123,Female,625.1,Healthy
+Brahman,206,Male,662.0,Underweight
+Brahman,37,Female,569.0,Overweight
+Brahman,71,Female,465.4,Healthy
+Brahman,132,Female,535.1,Healthy
+Kor Khmer,175,Female,239.3,Healthy
+Brahman,89,Male,895.9,Healthy
+Brahman,145,Female,462.0,Underweight
+Brahman,197,Female,575.4,Healthy
+Brahman,36,Male,908.4,Overweight
+Hariana,59,Male,390.6,Healthy
+Kor Khmer,175,Female,254.7,Healthy
+Brahman,204,Male,793.7,Healthy
+Brahman,27,Female,465.7,Healthy
+Brahman,196,Female,551.0,Healthy
+Kor Khmer,204,Male,327.5,Healthy
+Hariana,80,Female,338.2,Healthy
+Kor Khmer,113,Female,294.8,Overweight
+Hariana,39,Female,290.2,Healthy
+Brahman,44,Female,549.7,Healthy
+Brahman,223,Male,740.1,Healthy
+Kor Khmer,61,Male,308.7,Healthy
+Kor Khmer,92,Female,260.8,Healthy
+Hariana,114,Male,533.5,Healthy
+Hariana,185,Female,336.6,Healthy
+Kor Khmer,66,Female,237.8,Healthy
+Hariana,55,Female,313.8,Healthy
+Kor Khmer,39,Female,198.8,Healthy
+Hariana,97,Female,343.7,Healthy
+Kor Khmer,39,Male,345.8,Healthy
+Kor Khmer,90,Female,237.7,Healthy
+Kor Khmer,204,Male,333.5,Healthy
+Hariana,236,Male,477.4,Healthy
+Hariana,32,Female,268.3,Healthy
+Hariana,5,Female,99.9,Healthy
+Kor Khmer,215,Female,302.5,Overweight
+Hariana,146,Female,316.9,Healthy
+Hariana,79,Female,310.8,Healthy
+Kor Khmer,167,Male,327.3,Healthy
+Brahman,91,Female,588.5,Healthy
+Kor Khmer,96,Female,244.7,Healthy
+Hariana,58,Male,422.1,Healthy
+Kor Khmer,58,Male,384.6,Healthy
+Brahman,47,Female,592.5,Healthy
+Kor Khmer,168,Male,329.0,Healthy
+Hariana,12,Female,144.4,Underweight
+Brahman,106,Male,934.1,Healthy
+Hariana,44,Male,403.8,Healthy
+Brahman,88,Female,590.6,Healthy
+Brahman,180,Male,682.5,Underweight
+Kor Khmer,169,Male,381.2,Healthy
+Kor Khmer,99,Male,306.8,Healthy
+Hariana,190,Male,499.0,Healthy
+Kor Khmer,154,Male,350.5,Healthy
+Kor Khmer,165,Male,316.6,Healthy
+Brahman,187,Female,527.6,Healthy
+Kor Khmer,6,Female,91.2,Healthy
+Brahman,132,Male,858.7,Healthy
+Brahman,234,Female,582.1,Healthy
+Brahman,44,Female,614.1,Overweight
+Hariana,57,Female,265.8,Underweight
+Hariana,30,Male,455.5,Overweight
+Hariana,22,Female,246.6,Healthy
+Brahman,169,Male,773.6,Healthy
+Hariana,137,Female,281.7,Healthy
+Hariana,159,Male,456.2,Healthy
+Kor Khmer,106,Male,381.6,Healthy
+Hariana,180,Female,320.8,Healthy
+Hariana,157,Female,374.1,Overweight
+Brahman,38,Male,654.9,Healthy
+Brahman,158,Female,549.3,Healthy
+Brahman,81,Female,477.6,Healthy
+Brahman,99,Female,568.6,Healthy
+Brahman,1,Male,84.6,Healthy
+Brahman,205,Male,814.2,Healthy
+Hariana,76,Female,238.0,Underweight
+Brahman,220,Female,560.9,Healthy
+Brahman,11,Female,292.4,Healthy
+Kor Khmer,38,Male,328.5,Healthy
+Hariana,193,Male,522.5,Healthy
+Hariana,223,Female,290.2,Healthy
+Hariana,12,Female,189.6,Healthy
+Brahman,45,Female,576.3,Healthy
+Brahman,154,Female,452.1,Underweight
+Brahman,112,Female,566.9,Healthy
+Kor Khmer,232,Female,237.4,Healthy
+Brahman,16,Male,531.7,Healthy
+Kor Khmer,103,Female,258.2,Healthy
+Hariana,222,Male,442.3,Healthy
+Brahman,97,Female,511.4,Healthy
+Kor Khmer,187,Female,250.9,Healthy
+Kor Khmer,191,Male,311.9,Healthy
+Brahman,87,Male,753.8,Healthy
+Hariana,108,Male,495.9,Healthy
+Hariana,162,Male,411.6,Healthy
+Hariana,239,Female,346.7,Healthy
+Kor Khmer,69,Male,360.6,Healthy
+Kor Khmer,210,Female,206.9,Underweight
+Kor Khmer,157,Male,326.3,Healthy
+Kor Khmer,198,Female,279.9,Healthy
+Hariana,73,Female,289.7,Healthy
+Brahman,232,Female,524.5,Healthy
+Kor Khmer,223,Female,261.6,Healthy
+Kor Khmer,225,Female,269.6,Healthy
+Hariana,62,Female,309.7,Healthy
+Brahman,155,Male,799.1,Healthy
+Brahman,59,Female,610.9,Healthy
+Hariana,78,Male,541.1,Overweight
+Hariana,221,Male,510.5,Healthy
+Brahman,36,Female,494.0,Healthy
+Kor Khmer,220,Male,321.7,Healthy
+Brahman,21,Female,368.6,Healthy
+Hariana,195,Male,489.3,Healthy
+Kor Khmer,147,Female,260.4,Healthy
+Kor Khmer,95,Male,397.8,Healthy
+Hariana,227,Female,346.1,Healthy
+Hariana,67,Female,271.5,Underweight
+Hariana,218,Female,359.2,Healthy
+Brahman,191,Female,495.1,Healthy
+Brahman,16,Male,515.4,Healthy
+Kor Khmer,11,Female,131.2,Healthy
+Hariana,149,Male,557.7,Overweight
+Kor Khmer,144,Male,458.8,Overweight
+Kor Khmer,137,Male,371.1,Healthy
+Kor Khmer,117,Female,245.2,Healthy
+Kor Khmer,192,Male,368.7,Healthy
+Hariana,21,Male,370.1,Healthy
+Kor Khmer,217,Male,338.8,Healthy
+Hariana,119,Female,383.1,Overweight
+Hariana,209,Female,332.5,Healthy
+Brahman,49,Male,846.8,Healthy
+Hariana,13,Female,198.5,Healthy
+Brahman,191,Female,573.2,Healthy
+Hariana,174,Male,504.0,Healthy
+Hariana,28,Male,359.2,Healthy
+Hariana,203,Female,306.9,Healthy
+Brahman,163,Male,756.4,Healthy
+Brahman,226,Female,574.2,Healthy
+Kor Khmer,179,Female,269.5,Healthy

@@ -1,8 +1,36 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { User, Wifi, Save, CheckCircle2, Bell, ChevronDown, HelpCircle, Phone, Mail, Lock, Check, AlertTriangle } from 'lucide-react';
+import { z } from 'zod';
+import { User, Wifi, Save, CheckCircle2, Bell, ChevronDown, HelpCircle, Phone, Mail, Lock, Check, AlertTriangle, LogOut } from 'lucide-react';
+import { FarmerUser } from '../services/authService';
 
-export function Settings() {
+const settingsSchema = z.object({
+  profile: z.object({
+    fullName: z.string().min(2, 'Name must be at least 2 characters'),
+    phone: z.string().min(6, 'Phone number must be at least 6 digits'),
+    farmName: z.string().min(2, 'Farm name must be at least 2 characters'),
+    password: z.string().optional()
+  }),
+  wifi: z.object({
+    ssid: z.string(),
+    password: z.string(),
+    securityType: z.string(),
+    showPassword: z.boolean()
+  }),
+  notifications: z.object({
+    emailAlerts: z.boolean(),
+    smsAlerts: z.boolean(),
+    beepSound: z.boolean(),
+    warningTrigger: z.boolean()
+  })
+});
+
+interface SettingsProps {
+  user?: FarmerUser | null;
+  onLogout?: () => void;
+}
+
+export function Settings({ user, onLogout }: SettingsProps) {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('profile');
   const [showSuccess, setShowSuccess] = useState(false);
@@ -54,9 +82,9 @@ export function Settings() {
 
   const [formData, setFormData] = useState({
     profile: {
-      fullName: 'Sal The Butcher',
-      email: 'sal@camtech.edu',
-      farmName: 'Camtech experimental Farm',
+      fullName: user?.name || 'Sal The Butcher',
+      phone: user?.phone || '012345678',
+      farmName: 'AgroScale Dairy Pasture',
       password: ''
     },
     wifi: {
@@ -73,12 +101,33 @@ export function Settings() {
     }
   });
 
+  useEffect(() => {
+    if (user) {
+      setFormData(prev => ({
+        ...prev,
+        profile: {
+          ...prev.profile,
+          fullName: user.name,
+          phone: user.phone
+        }
+      }));
+    }
+  }, [user]);
+
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
-    setShowSuccess(true);
-    setTimeout(() => setShowSuccess(false), 3000);
-    // Here you would normally send formData to backend
-    console.log("Settings saved:", formData);
+    try {
+      settingsSchema.parse(formData);
+      setShowSuccess(true);
+      setTimeout(() => setShowSuccess(false), 3000);
+      // Here you would normally send formData to backend
+      console.log("Settings saved:", formData);
+    } catch (err) {
+      if (err instanceof z.ZodError) {
+        setToastMessage(err.errors[0].message);
+        setTimeout(() => setToastMessage(null), 3000);
+      }
+    }
   };
 
   const showToast = (message: string) => {
@@ -163,6 +212,17 @@ export function Settings() {
               <HelpCircle size={20} className={activeTab === 'help' ? 'text-green-600 dark:text-green-400' : 'text-gray-400 dark:text-gray-500'} />
               <span>{t('settings.help.tab', 'Help & Support')}</span>
             </button>
+
+            {onLogout && (
+              <button
+                type="button"
+                onClick={onLogout}
+                className="w-full flex items-center space-x-3 px-4 py-3 rounded-xl font-medium transition-colors text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/30 cursor-pointer mt-4"
+              >
+                <LogOut size={20} className="text-rose-500" />
+                <span>Log Out</span>
+              </button>
+            )}
           </nav>
         </div>
 
@@ -191,24 +251,26 @@ export function Settings() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{t('settings.profile.email', 'Email Address')}</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Phone Number</label>
                     <input 
-                      type="email" 
-                      value={formData.profile.email}
-                      onChange={(e) => updateNestedState('profile', 'email', e.target.value)}
+                      type="text" 
+                      value={formData.profile.phone}
+                      onChange={(e) => updateNestedState('profile', 'phone', e.target.value)}
                       className="w-full px-4 py-2.5 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-shadow"
                     />
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{t('settings.profile.farmName', 'Farm Name')}</label>
-                  <input 
-                    type="text" 
-                    value={formData.profile.farmName}
-                    onChange={(e) => updateNestedState('profile', 'farmName', e.target.value)}
-                    className="w-full px-4 py-2.5 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-shadow"
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{t('settings.profile.farmName', 'Farm Name')}</label>
+                    <input 
+                      type="text" 
+                      value={formData.profile.farmName}
+                      onChange={(e) => updateNestedState('profile', 'farmName', e.target.value)}
+                      className="w-full px-4 py-2.5 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-shadow"
+                    />
+                  </div>
                 </div>
 
                 <div className="pt-6 border-t border-gray-100 dark:border-gray-700">

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from './hooks/useLanguage';
+import { useAuth } from './hooks/useAuth';
 import {
   LayoutDashboard,
   Scale,
@@ -12,7 +13,8 @@ import {
   Info,
   Moon,
   Sun,
-  Wifi
+  Wifi,
+  LogOut
 } from 'lucide-react';
 import logoImg from './assets/custom-logo.jpg';
 import cowIcon from './assets/cow.png';
@@ -20,10 +22,12 @@ import { Home } from './pages/Home';
 import { Devices, Scale as ScaleInterface } from './pages/Devices';
 import { Herd } from './pages/Herd';
 import { Settings } from './pages/Settings';
+import { Login } from './pages/Login';
 import { NavItem } from './components/NavItem';
 
 // --- Main App Component ---
 export default function App() {
+  const { isAuthenticated, user, login, logout } = useAuth();
   const [activeTab, setActiveTab] = useState('home');
   const [activeScaleId, setActiveScaleId] = useState<string | null>(null);
   const [weighingCowId, setWeighingCowId] = useState<string | null>(null);
@@ -135,13 +139,22 @@ export default function App() {
     }
   };
 
+  // If user is not authenticated, display the Login screen
+  if (!isAuthenticated) {
+    return <Login onLoginSuccess={login} />;
+  }
+
+  const initials = user?.name 
+    ? user.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase()
+    : 'FM';
+
   return (
     <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-800'} flex font-sans transition-colors duration-200`}>
       {/* Sidebar */}
       <aside className={`w-64 ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} border-r flex-shrink-0 hidden md:flex flex-col transition-colors duration-200`}>
         <div className={`h-16 flex items-center px-6 border-b ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
-          <img src={logoImg} alt="CowFit Logo" className="h-12 w-12 object-cover mr-3 rounded-full shadow-sm" />
-          <span className={`font-bold text-xl ${isDarkMode ? 'text-white' : 'text-gray-900'} tracking-tight font-sans`}>CowFit</span>
+          <img src={logoImg} alt="AgroScale Logo" className="h-12 w-12 object-cover mr-3 rounded-full shadow-sm" />
+          <span className={`font-bold text-xl ${isDarkMode ? 'text-white' : 'text-gray-900'} tracking-tight font-sans`}>AgroScale</span>
         </div>
 
         <nav className="flex-1 py-6 px-4 space-y-1">
@@ -153,12 +166,12 @@ export default function App() {
 
         <div className={`p-4 border-t ${isDarkMode ? 'border-gray-700' : 'border-gray-200'}`}>
           <div className={`flex items-center p-2 rounded-lg ${isDarkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-50'} cursor-pointer`} onClick={() => setActiveTab('settings')}>
-            <div className="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-sm">
-              JD
+            <div className="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">
+              {initials}
             </div>
-            <div className="ml-3">
-              <p className={`text-sm font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Sal The Butcher</p>
-              <p className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>Farm Manager</p>
+            <div className="ml-3 flex-1 min-w-0">
+              <p className={`text-sm font-medium truncate ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{user?.name || 'Farmer Account'}</p>
+              <p className={`text-xs truncate ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>📞 {user?.phone || 'No phone'}</p>
             </div>
           </div>
         </div>
@@ -187,21 +200,12 @@ export default function App() {
             {/* Language Toggle Button */}
             <button
               onClick={toggleLanguage}
-              className={`flex items-center space-x-2 px-3 py-1.5 rounded-full text-sm font-medium transition-colors mr-4 ${isDarkMode ? 'bg-gray-700 hover:bg-gray-600 text-gray-200' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'}`}
+              className={`flex items-center space-x-2 px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${isDarkMode ? 'bg-gray-700 hover:bg-gray-600 text-gray-200' : 'bg-gray-100 hover:bg-gray-200 text-gray-700'}`}
             >
               <Globe className="w-4 h-4" />
               <span>{currentLanguage === 'en' ? 'EN' : 'ខ្មែរ'}</span>
             </button>
 
-            <div className="relative hidden sm:block">
-              <Search className={`w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 ${isDarkMode ? 'text-gray-500' : 'text-gray-400'}`} />
-              <input
-                type="text"
-                placeholder={t('search.placeholder')}
-                className={`pl-10 pr-4 py-2 border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent w-64 font-sans transition-colors ${isDarkMode ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-500'}`}
-              />
-            </div>
-            
             {/* Notification Bell */}
             <div className="relative" ref={notifRef}>
               <button 
@@ -254,6 +258,15 @@ export default function App() {
                 </div>
               )}
             </div>
+
+            {/* Logout Button */}
+            <button
+              onClick={logout}
+              title="Sign Out"
+              className={`p-2 rounded-full transition-colors ${isDarkMode ? 'text-rose-400 hover:bg-rose-950/40 hover:text-rose-300' : 'text-rose-600 hover:bg-rose-50 hover:text-rose-700'} cursor-pointer`}
+            >
+              <LogOut className="w-5 h-5" />
+            </button>
           </div>
         </header>
 
@@ -263,7 +276,7 @@ export default function App() {
             {activeTab === 'home' && <Home onNavigate={setActiveTab} />}
             {activeTab === 'devices' && <Devices scalesData={scalesData} onRemoveDevice={handleRemoveDevice} activeScaleId={activeScaleId} setActiveScaleId={setActiveScaleId} weighingCowId={weighingCowId} setWeighingCowId={setWeighingCowId} />}
             {activeTab === 'herd' && <Herd onNavigateToScale={navigateToScale} />}
-            {activeTab === 'settings' && <Settings />}
+            {activeTab === 'settings' && <Settings user={user} onLogout={logout} />}
           </div>
         </div>
       </main>

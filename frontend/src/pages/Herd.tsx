@@ -3,15 +3,16 @@ import { useTranslation } from 'react-i18next';
 import { Search, Plus, X, ArrowUpRight, ArrowDownRight, CheckCircle2, MoreVertical, Calendar, Heart, FileText, Filter, Download } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import cowIcon from '../assets/cow.png';
+import { authService } from '../services/authService';
 
 const initialMockHerd = [
-  { id: 'TAG-8921', weight: 1450, status: 'overweight', lastSync: '10 mins ago', trend: 'up', age: '3 yrs', breed: 'Angus', health: 'Good', gender: 'Male' },
-  { id: 'TAG-1142', weight: 1120, status: 'normal', lastSync: '45 mins ago', trend: 'stable', age: '2 yrs', breed: 'Hereford', health: 'Excellent', gender: 'Female' },
-  { id: 'TAG-9932', weight: 1520, status: 'critical', lastSync: '1 hour ago', trend: 'up', age: '4 yrs', breed: 'Angus', health: 'Attention Required', gender: 'Male' },
+  { id: 'TAG-8921', weight: 1450, status: 'overweight', lastSync: '10 mins ago', trend: 'up', age: '3 yrs', breed: 'Brahman', health: 'Good', gender: 'Male' },
+  { id: 'TAG-1142', weight: 320, status: 'normal', lastSync: '45 mins ago', trend: 'stable', age: '2 yrs', breed: 'Hariana', health: 'Excellent', gender: 'Female' },
+  { id: 'TAG-9932', weight: 1520, status: 'critical', lastSync: '1 hour ago', trend: 'up', age: '4 yrs', breed: 'Brahman', health: 'Attention Required', gender: 'Male' },
   { id: 'TAG-0021', weight: 1180, status: 'normal', lastSync: '2 hours ago', trend: 'down', age: '2.5 yrs', breed: 'Brahman', health: 'Good', gender: 'Female' },
-  { id: 'TAG-4431', weight: 1390, status: 'warning', lastSync: '3 hours ago', trend: 'up', age: '3.5 yrs', breed: 'Angus', health: 'Monitor', gender: 'Female' },
-  { id: 'TAG-7721', weight: 1205, status: 'normal', lastSync: '5 hours ago', trend: 'stable', age: '2 yrs', breed: 'Hereford', health: 'Good', gender: 'Male' },
-  { id: 'TAG-8812', weight: 1195, status: 'normal', lastSync: '5 hours ago', trend: 'down', age: '2 yrs', breed: 'Angus', health: 'Good', gender: 'Female' },
+  { id: 'TAG-4431', weight: 1390, status: 'warning', lastSync: '3 hours ago', trend: 'up', age: '3.5 yrs', breed: 'Brahman', health: 'Monitor', gender: 'Female' },
+  { id: 'TAG-7721', weight: 300, status: 'normal', lastSync: '5 hours ago', trend: 'stable', age: '2 yrs', breed: 'Kor Khmer', health: 'Good', gender: 'Male' },
+  { id: 'TAG-8812', weight: 280, status: 'normal', lastSync: '5 hours ago', trend: 'down', age: '2 yrs', breed: 'Kor Khmer', health: 'Good', gender: 'Female' },
 ];
 
 const mockHistoryData = [
@@ -44,23 +45,27 @@ export function Herd({ onNavigateToScale }: HerdProps) {
   const [showAddCowModal, setShowAddCowModal] = useState(false);
   const [genderFilter, setGenderFilter] = useState('All');
   const [breedFilter, setBreedFilter] = useState('All');
+  const [cowHistory, setCowHistory] = useState<any[]>([]);
   const filterRef = useRef<HTMLDivElement>(null);
 
   const fetchCows = async () => {
     try {
-      const res = await fetch('/api/cows');
+      const res = await fetch('/api/v1/cows', {
+        headers: { 'Authorization': `Bearer ${authService.getToken()}` }
+      });
       if (res.ok) {
         const data = await res.json();
         const mappedCows = data.map((cow: any) => ({
+          internalId: cow.id,
           id: cow.cowId,
-          weight: cow.latestWeight || 1000, 
-          status: 'normal',
-          lastSync: new Date(cow.updatedAt || cow.createdAt).toLocaleDateString(),
+          weight: cow.latestWeight || 0, 
+          status: cow.breed ? 'normal' : 'incomplete',
+          lastSync: new Date(cow.createdAt).toLocaleDateString(),
           trend: 'stable',
-          age: cow.birthDate ? Math.floor((new Date().getTime() - new Date(cow.birthDate).getTime()) / (1000 * 60 * 60 * 24 * 365.25)) + ' yrs' : 'N/A',
-          breed: cow.breed,
-          health: 'Good',
-          gender: cow.gender
+          age: cow.dateOfBirth ? Math.floor((new Date().getTime() - new Date(cow.dateOfBirth).getTime()) / (1000 * 60 * 60 * 24 * 365.25)) + ' yrs' : 'Unknown',
+          breed: cow.breed || 'Unknown',
+          health: cow.latestStatus || (cow.breed ? 'Pending Weigh-in' : 'Needs Registration'),
+          gender: cow.sex || 'Unknown'
         }));
         if (mappedCows.length > 0) {
           setHerdData(mappedCows);
@@ -81,6 +86,30 @@ export function Herd({ onNavigateToScale }: HerdProps) {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  useEffect(() => {
+    if (selectedCow && selectedCow.status !== 'incomplete') {
+      fetch(`/api/v1/cows/${(selectedCow as any).internalId}/measurements`, {
+        headers: { 'Authorization': `Bearer ${authService.getToken()}` }
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (!Array.isArray(data)) return;
+        const sorted = data.sort((a: any, b: any) => new Date(a.measuredAt).getTime() - new Date(b.measuredAt).getTime());
+        const mapped = sorted.map((m: any) => ({
+          date: new Date(m.measuredAt).toLocaleDateString(),
+          time: new Date(m.measuredAt).toLocaleTimeString(),
+          weight: m.weightKg,
+          device: m.deviceId,
+          status: m.status
+        }));
+        setCowHistory(mapped);
+      })
+      .catch(console.error);
+    } else {
+      setCowHistory([]);
+    }
+  }, [selectedCow]);
 
   const filteredHerd = herdData.filter(cow => {
     const matchesSearch = cow.id.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -105,6 +134,21 @@ export function Herd({ onNavigateToScale }: HerdProps) {
     document.body.removeChild(link);
   };
 
+  const handleExportCowHistory = () => {
+    if (cowHistory.length === 0 || !selectedCow) return;
+    const csvContent = "data:text/csv;charset=utf-8," 
+      + "Tag ID,Breed,Gender,Age,Date,Time,Weight (KG),Scale ID,Status\n"
+      + cowHistory.map(row => `${selectedCow.id},${selectedCow.breed},${selectedCow.gender},${selectedCow.age},${row.date},${row.time},${row.weight},${row.device},${row.status || 'Unknown'}`).join("\n");
+      
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `history_${selectedCow?.id}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="relative h-full flex flex-col transition-colors">
       {/* Header */}
@@ -113,10 +157,9 @@ export function Herd({ onNavigateToScale }: HerdProps) {
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{t('herd.title')}</h2>
           <p className="text-gray-500 dark:text-gray-400 mt-1">{t('herd.subtitle', 'Manage your livestock, view records, and track health.')}</p>
         </div>
-        <button onClick={() => setShowAddCowModal(true)} className="flex items-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors shadow-sm">
-          <Plus size={20} />
-          <span>{t('herd.addCow', 'Add Cow')}</span>
-        </button>
+        <div className="flex items-center text-sm text-gray-500 bg-gray-100 dark:bg-gray-800 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700">
+          <span className="font-medium">💡 New tags are automatically added when scanned by the scale.</span>
+        </div>
       </div>
 
       {/* Toolbar */}
@@ -168,9 +211,9 @@ export function Herd({ onNavigateToScale }: HerdProps) {
                       className="w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-sm focus:outline-none focus:ring-0 text-gray-900 dark:text-white transition-colors"
                     >
                       <option value="All">{t('herd.filterAllBreeds', 'All Breeds')}</option>
-                      <option value="Angus">Angus</option>
-                      <option value="Hereford">Hereford</option>
                       <option value="Brahman">Brahman</option>
+                      <option value="Kor Khmer">Kor Khmer</option>
+                      <option value="Hariana">Hariana</option>
                     </select>
                   </div>
                 </div>
@@ -209,7 +252,7 @@ export function Herd({ onNavigateToScale }: HerdProps) {
             <thead>
               <tr className="bg-gray-50 dark:bg-gray-700/50 border-b border-gray-200 dark:border-gray-700">
                 <th className="py-4 px-6 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">{t('herd.table.tagId', 'Tag ID')}</th>
-                <th className="py-4 px-6 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">{t('herd.table.weight', 'Weight (lbs)')}</th>
+                <th className="py-4 px-6 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">{t('herd.table.weight', 'Weight (KG)')}</th>
                 <th className="py-4 px-6 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">{t('herd.table.status', 'Status')}</th>
                 <th className="py-4 px-6 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">{t('herd.table.lastSync', 'Last Sync')}</th>
                 <th className="py-4 px-6 text-right text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">{t('herd.table.actions', 'Actions')}</th>
@@ -241,10 +284,11 @@ export function Herd({ onNavigateToScale }: HerdProps) {
                   <td className="py-4 px-6">
                     <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                       cow.status === 'critical' ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400' :
+                      cow.status === 'incomplete' ? 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400' :
                       cow.status === 'overweight' || cow.status === 'warning' ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400' :
                       'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
                     }`}>
-                      {t(`status.${cow.status}`)}
+                      {cow.status === 'incomplete' ? 'Incomplete' : t(`status.${cow.status}`)}
                     </span>
                   </td>
                   <td className="py-4 px-6 text-sm text-gray-500 dark:text-gray-400">{cow.lastSync}</td>
@@ -296,7 +340,7 @@ export function Herd({ onNavigateToScale }: HerdProps) {
                   </div>
                   <div className="flex items-baseline space-x-2">
                     <span className="text-3xl font-bold text-gray-900 dark:text-white">{selectedCow.weight}</span>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">lbs</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">kg</span>
                   </div>
                 </div>
                 <div className="bg-gray-50 dark:bg-gray-700/50 rounded-xl p-4 border border-gray-100 dark:border-gray-700">
@@ -312,32 +356,99 @@ export function Herd({ onNavigateToScale }: HerdProps) {
               <div>
                 <h3 className="text-base font-bold text-gray-900 dark:text-white mb-4">{t('herd.detail.weightHistory', 'Weight History (YTD)')}</h3>
                 <div className="h-64 w-full bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl p-4 shadow-sm">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart data={mockHistoryData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
-                      <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" className="opacity-50 dark:opacity-20" />
-                      <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fill: '#6b7280', fontSize: 12 }} dy={10} />
+                  {cowHistory.length > 0 ? (
+                    <ResponsiveContainer width="100%" height="100%">
+                      <LineChart data={cowHistory} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
+                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" className="opacity-50 dark:opacity-20" />
+                        <XAxis dataKey="date" axisLine={false} tickLine={false} tick={{ fill: '#6b7280', fontSize: 12 }} dy={10} />
                       <YAxis axisLine={false} tickLine={false} tick={{ fill: '#6b7280', fontSize: 12 }} />
                       <Tooltip
                         contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)', backgroundColor: 'var(--tw-prose-body, white)', color: '#111827' }}
                         itemStyle={{ color: '#16a34a', fontWeight: 'bold' }}
                       />
                       <Line type="monotone" dataKey="weight" stroke="#22c55e" strokeWidth={3} dot={{ r: 4, fill: '#22c55e', strokeWidth: 2, stroke: '#fff' }} activeDot={{ r: 6 }} />
-                    </LineChart>
-                  </ResponsiveContainer>
+                      </LineChart>
+                    </ResponsiveContainer>
+                  ) : (
+                    <div className="h-full w-full flex items-center justify-center text-gray-500 dark:text-gray-400">
+                      No measurement history yet.
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Detailed History Table */}
+              <div>
+                <h3 className="text-base font-bold text-gray-900 dark:text-white mb-4">{t('herd.detail.recentWeighIns', 'Recent Weigh-ins')}</h3>
+                <div className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl overflow-hidden shadow-sm">
+                  <div className="max-h-60 overflow-y-auto custom-scrollbar">
+                    {cowHistory.length > 0 ? (
+                      <table className="w-full text-left border-collapse">
+                        <thead className="sticky top-0 bg-gray-50 dark:bg-gray-700/50">
+                          <tr>
+                            <th className="py-3 px-4 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Date/Time</th>
+                            <th className="py-3 px-4 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Scale</th>
+                            <th className="py-3 px-4 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Weight</th>
+                            <th className="py-3 px-4 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
+                          {cowHistory.slice().reverse().map((record, idx) => (
+                            <tr key={idx} className="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                              <td className="py-3 px-4 text-sm text-gray-900 dark:text-gray-300">
+                                <div>{record.date}</div>
+                                <div className="text-xs text-gray-500 dark:text-gray-500 mt-0.5">{record.time}</div>
+                              </td>
+                              <td className="py-3 px-4 text-sm font-mono text-gray-500 dark:text-gray-400">{record.device}</td>
+                              <td className="py-3 px-4 text-sm font-medium text-gray-900 dark:text-white">{record.weight} kg</td>
+                              <td className="py-3 px-4">
+                                {record.status ? (
+                                  <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium capitalize ${
+                                    record.status === 'underweight' || record.status === 'overweight' ? 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400' :
+                                    'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
+                                  }`}>
+                                    {record.status}
+                                  </span>
+                                ) : (
+                                  <span className="text-xs text-gray-400">-</span>
+                                )}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    ) : (
+                      <div className="py-8 text-center text-gray-500 dark:text-gray-400 text-sm">No recent weigh-ins found.</div>
+                    )}
+                  </div>
                 </div>
               </div>
 
               {/* Action Buttons */}
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100 dark:border-gray-700">
-                <button className="px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-xl font-medium transition-colors shadow-sm text-center">
-                  {t('herd.detail.editRecord', 'Edit Record')}
-                </button>
-                <button 
-                  onClick={() => setShowScaleModal(true)}
-                  className="px-4 py-3 bg-green-600 border border-transparent text-white hover:bg-green-700 rounded-xl font-medium transition-colors shadow-sm text-center"
-                >
-                  {t('herd.detail.addWeighIn', 'Add Weigh-in')}
-                </button>
+                {selectedCow.status === 'incomplete' ? (
+                  <button 
+                    onClick={() => { setShowAddCowModal(true); /* Reuse modal for updating */ }}
+                    className="px-4 py-3 bg-yellow-500 hover:bg-yellow-600 text-white rounded-xl font-medium transition-colors shadow-sm text-center col-span-2"
+                  >
+                    Complete Registration
+                  </button>
+                ) : (
+                  <>
+                    <button 
+                      onClick={handleExportCowHistory}
+                      className="px-4 py-3 bg-gray-100 dark:bg-gray-700 border border-transparent text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-xl font-medium transition-colors shadow-sm text-center flex items-center justify-center gap-2"
+                    >
+                      <Download size={18} />
+                      Export CSV
+                    </button>
+                    <button 
+                      onClick={() => { setShowAddCowModal(true); /* Edit Record */ }}
+                      className="px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-xl font-medium transition-colors shadow-sm text-center">
+                      {t('herd.detail.editRecord', 'Edit Record')}
+                    </button>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -398,55 +509,52 @@ export function Herd({ onNavigateToScale }: HerdProps) {
             <form className="p-6 space-y-4" onSubmit={(e) => { 
               e.preventDefault(); 
               const formData = new FormData(e.currentTarget);
-              
-              const ageStr = formData.get('age') as string;
-              let birthDate = new Date();
-              const numYears = parseInt(ageStr) || 1;
-              birthDate.setFullYear(birthDate.getFullYear() - numYears);
 
               const payload = {
                 cowId: formData.get('tagId') as string,
-                name: formData.get('tagId') as string,
                 breed: formData.get('breed') as string,
                 gender: formData.get('gender') as string,
-                birthDate: birthDate.toISOString()
+                birthDate: formData.get('birthDate') ? new Date(formData.get('birthDate') as string).toISOString() : undefined
               };
 
-              fetch('/api/cows', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+              const url = selectedCow 
+                ? `/api/v1/cows/${(selectedCow as any).internalId}` 
+                : '/api/v1/cows';
+              const method = selectedCow ? 'PUT' : 'POST';
+
+              fetch(url, {
+                method,
+                headers: { 
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${authService.getToken()}`
+                },
                 body: JSON.stringify(payload)
-              }).then(() => {
-                const initialWeight = formData.get('weight');
-                if (initialWeight) {
-                  return fetch(`/api/cows/${payload.cowId}/weights`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ weight: Number(initialWeight), deviceId: 'MANUAL' })
-                  });
-                }
+              }).then(res => {
+                if (!res.ok) throw new Error('Failed to save cow');
+                return res.json();
               }).then(() => {
                 fetchCows();
                 setShowAddCowModal(false); 
-              }).catch(err => console.error('Error adding cow:', err));
+                setSelectedCow(null);
+              }).catch(err => console.error('Error saving cow:', err));
             }}>
               <div className="grid grid-cols-2 gap-4">
                 <div className="col-span-2 sm:col-span-1">
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tag ID</label>
-                  <input name="tagId" required type="text" placeholder="e.g. TAG-1234" className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white outline-none transition-colors" />
+                  <input name="tagId" required type="text" defaultValue={selectedCow?.id || ''} readOnly className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white outline-none transition-colors opacity-75 cursor-not-allowed" />
                 </div>
                 <div className="col-span-2 sm:col-span-1">
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Breed</label>
                   <select name="breed" className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white outline-none transition-colors">
-                    <option value="Angus">Angus</option>
-                    <option value="Hereford">Hereford</option>
                     <option value="Brahman">Brahman</option>
+                    <option value="Kor Khmer">Kor Khmer</option>
+                    <option value="Hariana">Hariana</option>
                     <option value="Other">Other</option>
                   </select>
                 </div>
                 <div className="col-span-2 sm:col-span-1">
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Age</label>
-                  <input name="age" required type="text" placeholder="e.g. 2 yrs" className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white outline-none transition-colors" />
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Date of Birth</label>
+                  <input name="birthDate" required type="date" className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white outline-none transition-colors" />
                 </div>
                 <div className="col-span-2 sm:col-span-1">
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Gender</label>
@@ -455,13 +563,6 @@ export function Herd({ onNavigateToScale }: HerdProps) {
                     <option value="Male">Male</option>
                   </select>
                 </div>
-                <div className="col-span-2">
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Initial Weight (Optional)</label>
-                  <div className="relative">
-                    <input name="weight" type="number" placeholder="e.g. 1000" className="w-full px-4 py-2 pr-12 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white outline-none transition-colors" />
-                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 text-sm">lbs</span>
-                  </div>
-                </div>
               </div>
               
               <div className="pt-6 flex justify-end gap-3 border-t border-gray-100 dark:border-gray-700 mt-6">
@@ -469,7 +570,7 @@ export function Herd({ onNavigateToScale }: HerdProps) {
                   Cancel
                 </button>
                 <button type="submit" className="px-5 py-2.5 bg-green-600 text-white rounded-lg hover:bg-green-700 font-medium transition-colors shadow-sm">
-                  Add Cow
+                  Save Details
                 </button>
               </div>
             </form>
